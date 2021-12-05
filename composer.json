@@ -38,6 +38,13 @@
     "config": {
         "sort-packages": true
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mpie\\LighthouseOAuth\\LighthouseOAuthServiceProvider"
+            ]
+        }
+    },
     "autoload": {
         "psr-4": {
             "Mpie\\LighthouseOAuth\\": "src/"
