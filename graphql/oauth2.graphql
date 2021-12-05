@@ -3,7 +3,7 @@ extend type Mutation {
     login(input: LoginInput @spread): TokenPayload! @field(resolver: "Mpie\\LighthouseOAuth\\GraphQL\\Mutations\\Login@resolve")
     refreshToken(input: RefreshTokenInput @spread): RefreshTokenPayload! @field(resolver: "Mpie\\LighthouseOAuth\\GraphQL\\Mutations\\RefreshToken@resolve")
     logout: LogoutResponse! @field(resolver: "Mpie\\LighthouseOAuth\\GraphQL\\Mutations\\Logout@resolve")
-#    forgotPassword(input: ForgotPasswordInput! @spread): ForgotPasswordResponse! @field(resolver: "Mpie\\LighthouseOAuth\\GraphQL\\Mutations\\ForgotPassword@resolve")
+    forgotPassword(input: ForgotPasswordInput! @spread): ForgotPasswordResponse! @field(resolver: "Mpie\\LighthouseOAuth\\GraphQL\\Mutations\\ForgotPassword@resolve")
 #    updateForgottenPassword(input: NewPasswordWithCodeInput @spread): ForgotPasswordResponse! @field(resolver: "Mpie\\LighthouseOAuth\\GraphQL\\Mutations\\ResetPassword@resolve")
 #    register(input: RegisterInput @spread): RegisterResponse! @field(resolver: "Mpie\\LighthouseOAuth\\GraphQL\\Mutations\\Register@resolve")
 #    updatePassword(input: UpdatePassword! @spread): UpdatePasswordResponse! @field(resolver: "Mpie\\LighthouseOAuth\\GraphQL\\Mutations\\UpdatePassword@resolve") @guard
@@ -45,12 +45,10 @@ type RefreshTokenPayload {
 }
 
 type LogoutResponse {
-    status: String!
     message: String
 }
 
 type ForgotPasswordResponse {
-    status: String!
     message: String
 }
 
@@ -60,7 +58,6 @@ type RegisterResponse {
 }
 
 type UpdatePasswordResponse {
-    status: String!
     message: String
 }
 

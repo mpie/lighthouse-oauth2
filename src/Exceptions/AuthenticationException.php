@@ -28,8 +28,6 @@ class AuthenticationException extends Exception implements RendersErrorsExtensio
 
     public function extensionsContent(): array
     {
-        return [
-            'reason' => $this->reason,
-        ];
+        return ['reason' => $this->reason];
     }
 }

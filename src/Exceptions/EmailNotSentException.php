@@ -5,15 +5,15 @@ namespace Mpie\LighthouseOAuth\Exceptions;
 use Exception;
 use Nuwave\Lighthouse\Exceptions\RendersErrorsExtensions;
 
-class ValidationException extends Exception implements RendersErrorsExtensions
+class EmailNotSentException extends Exception implements RendersErrorsExtensions
 {
-    private string $errors;
+    private string $reason;
 
-    public function __construct(string $errors, string $message = '')
+    public function __construct(string $message, string $reason)
     {
         parent::__construct($message);
 
-        $this->errors = $errors;
+        $this->reason = $reason;
     }
 
     public function isClientSafe(): bool
@@ -23,11 +23,11 @@ class ValidationException extends Exception implements RendersErrorsExtensions
 
     public function getCategory(): string
     {
-        return 'validation';
+        return 'notifications';
     }
 
     public function extensionsContent(): array
     {
-        return ['errors' => $this->errors];
+        return ['reason' => $this->reason];
     }
 }

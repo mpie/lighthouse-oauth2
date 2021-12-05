@@ -16,9 +16,6 @@ class Logout
 
         auth(config('lighthouse-oauth2.guard'))->user()->token()->revoke();
 
-        return [
-            'status' => 'token revoked',
-            'message' => 'Successfully logged out',
-        ];
+        return ['message' => 'Successfully logged out'];
     }
 }

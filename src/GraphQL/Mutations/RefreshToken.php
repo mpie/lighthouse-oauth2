@@ -11,7 +11,7 @@ class RefreshToken extends AuthResolver
 {
     public function resolve($rootValue, array $args, GraphQLContext $context = null, ResolveInfo $resolveInfo): array
     {
-        $response = $this->request($args, 'refresh_token');
+        $response = $this->request($args);
         $userId = $this->parseToken($response['access_token']);
         $this->makeAuthModelInstance()->findOrFail($userId);
 
