@@ -1,0 +1,62 @@
+{
+    "name": "mpie/lighthouse-graphql-oauth2",
+    "type": "library",
+    "description": "An OAuth2 implementation for Lighthouse",
+    "keywords": [
+        "graphql",
+        "laravel",
+        "laravel-graphql",
+        "lighthouse",
+        "oauth2",
+        "passport"
+    ],
+    "homepage": "https://mpie.dev",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ai-yakaan Sukapinta",
+            "email": "aiyakaan@mpie.nl",
+            "homepage": "https://www.mpie.nl"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "ext-json": "*",
+        "illuminate/auth": "^8",
+        "illuminate/collections": "^8",
+        "illuminate/database": "^8",
+        "illuminate/http": "^8",
+        "laravel/passport": "^10.0",
+        "lcobucci/jwt": "*",
+        "nuwave/lighthouse": "^5.0"
+    },
+    "require-dev": {
+        "laravel/framework": "^8",
+        "mockery/mockery": "^1",
+        "phpunit/phpunit": "^7.5 || ^8.4 || ^9"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Mpie\\LighthouseOAuth\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mpie\\LighthouseOAuth\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "test": "phpunit --colors=always",
+        "test:integration": "phpunit --colors=always --testsuite Integration",
+        "test:unit": "phpunit --colors=always --testsuite Unit"
+    },
+    "support": {
+        "issues": "https://github.com/mpie/lighthouse-oauth2/issues",
+        "source": "https://github.com/mpie/lighthouse-oauth2"
+    }
+}
