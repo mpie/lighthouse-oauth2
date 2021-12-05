@@ -2,14 +2,14 @@
 
 namespace Mpie\LighthouseOAuth\GraphQL\Auth;
 
-use Illuminate\Contracts\Config\Repository;
 use Illuminate\Database\Eloquent\Model;
 
 class AuthModelFactory
 {
     public function make(array $attributes = []): Model
     {
-        $class = config('auth.providers.'.config('lighthouse-oauth2.provider').'.model');
+        $provider = config('auth.guards.'.config('lighthouse-oauth2.guard').'.provider');
+        $class = config("auth.providers.$provider.model");
 
         return new $class($attributes);
     }

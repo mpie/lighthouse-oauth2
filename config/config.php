@@ -19,7 +19,7 @@ return [
     | The passport client id.
     |
     */
-    'client_id' => env('LIGHTHOUSE_OAUTH2_GRANT_TYPE_CLIENT_ID', 1),
+    'client_id' => env('LIGHTHOUSE_OAUTH2_CLIENT_ID', 1),
 
     /*
     |--------------------------------------------------------------------------
@@ -29,7 +29,7 @@ return [
     | The passport client secret.
     |
     */
-    'client_secret' => env('LIGHTHOUSE_OAUTH2_GRANT_TYPE_CLIENT_SECRET', null),
+    'client_secret' => env('LIGHTHOUSE_OAUTH2_CLIENT_SECRET', null),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,18 +52,6 @@ return [
     |
     */
     'scope' => env('LIGHTHOUSE_OAUTH2_SCOPE', '*'),
-
-    /*
-    |--------------------------------------------------------------------------
-    | Provider
-    |--------------------------------------------------------------------------
-    |
-    | The name of the Laravel passport provider.
-    | When using 'password' grant type, make sure you add the --provider flag
-    | during client generation as stated in the Laravel Passport documentations
-    | See: https://laravel.com/docs/8.x/passport#customizing-the-user-provider
-    */
-    'provider' => env('LIGHTHOUSE_OAUTH2_PROVIDER', 'users'),
 
     /*
     |--------------------------------------------------------------------------
