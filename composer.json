@@ -1,5 +1,5 @@
 {
-    "name": "mpie/lighthouse-graphql-oauth2",
+    "name": "mpie/lighthouse-oauth2",
     "type": "library",
     "description": "An OAuth2 implementation for Lighthouse",
     "keywords": [
