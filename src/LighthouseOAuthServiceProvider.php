@@ -19,10 +19,10 @@ class LighthouseOAuthServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../../config/config.php' => config_path('lighthouse-oauth2.php'),
-        ], 'config');
+        ], 'lighthouse-oauth2-config');
 
         $this->publishes([
             __DIR__.'/../../graphql/oauth2.graphql' => base_path('graphql/oauth2.graphql'),
-        ], 'schema');
+        ], 'lighthouse-oauth2-schema');
     }
 }
