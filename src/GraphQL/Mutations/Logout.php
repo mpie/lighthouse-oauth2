@@ -18,7 +18,7 @@ class Logout
 
         return [
             'status' => 'token revoked',
-            'message' => 'Your session has been terminated',
+            'message' => 'Successfully logged out',
         ];
     }
 }

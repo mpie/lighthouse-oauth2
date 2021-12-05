@@ -19,7 +19,13 @@ class Login extends AuthResolver
 
     protected function getUser(string $username): Model
     {
-        return $this->makeAuthModelInstance()::query()
+        $model = $this->makeAuthModelInstance();
+
+        if (method_exists($model, 'findForPassport')) {
+            return $model->findForPassport($username);
+        }
+
+        return $model::query()
             ->where(config('lighthouse-oauth2.match_user_by'), '=', $username)
             ->firstOrFail();
     }
