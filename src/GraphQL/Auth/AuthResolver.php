@@ -34,7 +34,7 @@ class AuthResolver
         $scope ??= config('lighthouse-oauth2.scope');
         $authCode = $args['code'] ?? null;
 
-        return collect($args)
+        $parameters = collect($args)
             ->except('directive')
             ->put('client_id', config('lighthouse-oauth2.client_id'))
             ->put('client_secret', config('lighthouse-oauth2.client_secret'))
@@ -42,6 +42,12 @@ class AuthResolver
             ->put('scope', $scope)
             ->put('code', $authCode)
             ->filter();
+
+        $parameters->when(isset($args['refresh_token']), function ($collection) {
+            return $collection->put('grant_type', 'refresh_token');
+        });
+
+        return $parameters;
     }
 
     protected function getAuthModelFactory(): AuthModelFactory
