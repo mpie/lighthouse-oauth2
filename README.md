@@ -47,7 +47,7 @@ LIGHTHOUSE_OAUTH2_GUARD="super-private-guard"
 The user model is returned when login mutation is called. This can be disabled with:
 
 ```
-LIGHTHOUSE_OAUTH2_FETCH_USER=false
+LIGHTHOUSE_OAUTH2_FETCH_USER=false # Make sure you uncomment 'user: User' model in the graphql file
 ```
 
 User column matching (will be applied when 'fetch_user' is true). Defaults to 'email':
