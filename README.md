@@ -64,7 +64,7 @@ php artisan vendor:publish --provider="Mpie\LighthouseOAuth\LighthouseOAuthServi
 
 This will publish the schema. There are no migration files.
 
-Then update the `lighthouse-oauth2.php` configuration file to point the schema file to the load exported file instead of the one provided by the package.
+Then update the `lighthouse-oauth2.php` configuration file to point the schema file to load the exported file instead of the one provided by the package.
 
 ```php
 /*
