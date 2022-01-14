@@ -64,7 +64,7 @@ php artisan vendor:publish --provider="Mpie\LighthouseOAuth\LighthouseOAuthServi
 
 This will publish the schema. There are no migration files.
 
-Then update the configuration file to point the schema file to the load exported file instead of the one provided by the package.
+Then update the `lighthouse-oauth2.php` configuration file to point the schema file to the load exported file instead of the one provided by the package.
 
 ```php
 /*
@@ -76,7 +76,7 @@ Then update the configuration file to point the schema file to the load exported
 | the default location
 |
 */
-'schema' => base_path('graphql/oauth2.graphql')
+'schema' => base_path('graphql/oauth2.graphql'),
 ```
 
 From there you can customize the schema to fit your needs.
