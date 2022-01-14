@@ -1,5 +1,5 @@
 # lighthouse-oauth2
-An OAuth2 implementation for Laravel Lighthouse thourgh Passport
+An OAuth2 implementation for Laravel Lighthouse through Passport
 
 ## Installation
 To install run
