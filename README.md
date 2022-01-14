@@ -26,7 +26,7 @@ In case you need to point to a different url such as a subdomain that is running
 LIGHTHOUSE_OAUTH2_DOMAIN="https://sub.domain.com"
 ```
 
-Changing the passport grant type to 'password' instead of the default 'authorization_code':
+Changing the grant type to 'password' instead of the default 'authorization_code':
 
 ```
 LIGHTHOUSE_OAUTH2_GRANT_TYPE="password"
