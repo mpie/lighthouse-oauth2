@@ -3,6 +3,7 @@
 namespace Mpie\LighthouseOAuth;
 
 use Illuminate\Support\ServiceProvider;
+use Nuwave\Lighthouse\Events\BuildSchemaString;
 
 class LighthouseOAuthServiceProvider extends ServiceProvider
 {
@@ -13,6 +14,17 @@ class LighthouseOAuthServiceProvider extends ServiceProvider
     public function register()
     {
         $this->registerConfig();
+
+        app('events')->listen(
+            BuildSchemaString::class,
+            function (): string {
+                if (config('lighthouse-oauth2.schema')) {
+                    return file_get_contents(config('lighthouse-oauth2.schema'));
+                }
+
+                return file_get_contents(__DIR__.'/../../graphql/oauth2.graphql');
+            }
+        );
     }
 
     protected function registerConfig()

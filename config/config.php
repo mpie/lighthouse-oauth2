@@ -3,10 +3,10 @@
 return [
     /*
     |--------------------------------------------------------------------------
-    | Client ID
+    | Domain (usually a subdomain when working in a monolith)
     |--------------------------------------------------------------------------
     |
-    | The passport client id.
+    | The domain.
     |
     */
     'domain' => env('LIGHTHOUSE_OAUTH2_DOMAIN', null),
@@ -30,6 +30,17 @@ return [
     |
     */
     'client_secret' => env('LIGHTHOUSE_OAUTH2_CLIENT_SECRET', null),
+
+    /*
+    |--------------------------------------------------------------------------
+    | GraphQL schema
+    |--------------------------------------------------------------------------
+    |
+    | File path of the GraphQL schema to be used, defaults to null so it uses
+    | the default location
+    |
+    */
+    'schema' => null,
 
     /*
     |--------------------------------------------------------------------------
@@ -77,7 +88,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | User column matching (will be applied when 'should_return_user' is true)
+    | User column matching (will be applied when 'fetch_user' is true)
     |--------------------------------------------------------------------------
     |
     | Which column should be used to find the user.
