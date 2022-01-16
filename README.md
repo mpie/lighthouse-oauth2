@@ -38,7 +38,7 @@ Changing the default scope of '*':
 LIGHTHOUSE_OAUTH2_SCOPE="email,something,another"
 ```
 
-Changing the default guard 'api' for the user lookup:
+Unique feature. You can change the default guard 'api' for the user lookup instead of being vendor locked:
 
 ```
 LIGHTHOUSE_OAUTH2_GUARD="super-private-guard"
